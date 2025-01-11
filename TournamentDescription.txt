@@ -1,0 +1,35 @@
+All 32 teams are randomised and then sorted into groups of four for the group stage. Each team in
+each group ends up playing every other team in the group. For a win of each game, they get 3
+points; for a draw they get one and for a loss they get 0. The two teams with the most points
+in each group qualify for the knockout stage - wherein from the 16 qualifying teams the pairings
+are randomised and teams are out of the tournament if they lose. If there is a draw - a 50/50
+chance is set up for the team(s) to win a penalty shootout to get through to the next stage.
+There are 4 knockout rounds - diminishing the 16 qualifying teams from the group stage to 1
+eventual winner.
+
+Each game is simulated individually. There are 90 iterations per game for every minute of a real
+football game. At the start of each game possession is randomised with a 50/50 chance for each
+team to get the first touch of the ball. From there, every iteration there is a low chance for
+the possession team to take a shot at goal. The striker is randomly chosen from the teams
+forwards (that are selected based on the manager's preferred formation and the best stats) - and
+the random chance for the goal to be successful scales with that player's shot accuracy stat.
+
+There is also a higher chance for the possession team to be challenged by the opposing team.
+At which point a player on each team is selected at random. A random number scales alongside
+the possession player's defensiveness and the challenger's aggression - if the challenger's
+aggression score is greater than the defensiveness of the possession player then the tackle is
+successful and possession passes to the challenger's team. However, if the aggression is too
+high then there is a greater chance for the challenged player to get fouled. At this point, the
+other team is offered a free kick and the challenged player's team regains possession.
+
+The most common occurence in this simulation is a pass being made. At this point, a randomly
+selected player on the other team has the chance to intercept the pass. If that player's chance
+creation statistic is greater than the passing player's passing accuracy stat then the
+interception is successful and possession of the ball passes to the interceptor's team. If not,
+then the success of the pass hinges on the passing accuracy being high enough - otherwise the
+pass misses. Furthermore, if the pass is accurate enough but the receiving player's positioning
+statistic isn't high enough then that player will fumble the ball and their team will lose
+possession. The same thing happens if the pass is missed.
+
+Whatever team has the higher number of goals scored at the end of the game is the winner - and
+the tournament follows the aforementioned structure.
